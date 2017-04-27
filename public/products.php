@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Products</title>
-  </head>
+
+<?php include("../view/nav.php"); ?>
+
   <body>
     <h1>Customer's Product Page</h1>
 
@@ -21,4 +18,5 @@
       <input type="hidden" name="action" value="">
     </form>
   </body>
-</html>
+
+  <?php include("../view/footer.php"); ?>

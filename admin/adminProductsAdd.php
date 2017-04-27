@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Admin Products Add</title>
-  </head>
+<?php include("../view/nav.php") ?>
+
   <body>
 	<h1>Admin Add Product</h1>
   </body>
-</html>
+<?php include("../view/footer.php") ?>

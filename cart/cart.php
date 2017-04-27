@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Cart</title>
-  </head>
+<?php include("../view/nav.php") ?>
+
   <body>
     <h1>This is the Cart</h1>
   </body>
-</html>
+<?php include("../view/footer.php") ?>
