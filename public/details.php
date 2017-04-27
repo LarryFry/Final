@@ -1,6 +1,7 @@
 <?php include("../view/nav.php") ?>
 
   <body>
-    <h1>About Us (Customer View)</h1>
+    <h1>Detailed Product View Page</h1>
   </body>
+
 <?php include("../view/footer.php"); ?>
