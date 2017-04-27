@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Admin Cart</title>
+    <title>Admin Add Employee</title>
   </head>
   <body>
-	<h1>Admin Cart</h1>
+    <h1>Admin Add Employee</h1>
   </body>
 </html>

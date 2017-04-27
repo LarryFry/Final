@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>adminDetails</title>
+    <title>Admin Products Add</title>
   </head>
   <body>
-	<h1>Admin Details Page</h1>
+	<h1>Admin Add Product</h1>
   </body>
 </html>

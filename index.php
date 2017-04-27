@@ -20,30 +20,58 @@
   }
 
 
+/*Page Navigation Logic is Called*/
+if($accessType == "customer"){
+  takeMeAway("customer", $action);
+}
 
-if ($accessType == "admin"){
-  $action = filter_input(INPUT_POST, 'action');
-      if ($action == 'products_page') {
-          $action = 'admin_products_page';
-      }
-  }
+if($accessType == "admin"){
+  takeMeAway("admin");
+}
+
 
 /*Everything Below This Line checks the $action variable, and then includes the corresponding page.*/
   /*Default Page*/
-if ($action == "products_page"){
-  include("public/products.php");
-}
-if($action == "admin_products_page"){
-  include("admin/adminProducts.php");
-}
+
+  function takeMeAway($access, $action){
+    if($access == "admin"){
+      if($action == "cart"){
+        include("cart/cart.php");
+      }
+      if($action == "details"){
+        include("public/details.php");
+      }
+      if($action == "admin_about_edit"){
+        include("admin/adminAboutEdit.php");
+      }
+      if($action == "admin_about_add"){
+        include("admin/adminAboutAdd.php");
+      }
+      if($action == "admin_products_edit"){
+        include("admin/adminProductsEdit.php");
+      }
+      if($action == "admin_products_add"){
+        include("admin/adminProductsAdd.php");
+      }
+    }//End of if "admin"
 
 
-if($action =="details"){
-  include("public/details.php")
-}
+    if($access == "customer"){
+      if($action == "cart"){
+        include("cart/cart.php");
+      }
+      if($action == "details"){
+        include("public/details.php");
+      }
+      if($action == "products_page"){
+        include("public/products.php");
+      }
+      if($action == "about_page"){
+        include("public/about.php");
+      }
 
-if($action == "cart"){
-  include("cart/cart.php")
-}
+
+    }//End of if "customer"
+  }//End of whatPage
 
 ?>
