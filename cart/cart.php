@@ -1,6 +1,6 @@
 <?php include("../view/nav.php") ?>
 
-  <body>
-    <h1>This is the Cart</h1>
-  </body>
+
+  <h1>This is the Cart</h1>
+
 <?php include("../view/footer.php") ?>

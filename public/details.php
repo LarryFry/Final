@@ -1,7 +1,7 @@
 <?php include("../view/nav.php") ?>
 
-  <body>
-    <h1>Detailed Product View Page</h1>
-  </body>
+
+  <h1>Detailed Product View Page</h1>
+
 
 <?php include("../view/footer.php"); ?>

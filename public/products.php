@@ -1,7 +1,6 @@
 
 <?php include("../view/nav.php"); ?>
 
-  <body>
     <h1>Customer's Product Page</h1>
 
     <!-- Display the Products in the Database. When the form is clicked, use JS and submit it.-->
@@ -17,6 +16,6 @@
     <form style="width:400px; height: 400px; border: 2px solid black; display:inline-block;" class="" action="." method="post">
       <input type="hidden" name="action" value="">
     </form>
-  </body>
+
 
   <?php include("../view/footer.php"); ?>
