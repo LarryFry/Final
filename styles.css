@@ -1,3 +1,9 @@
 Body{
   Margin: auto;
 }
+
+/* Navigation styling */
+.logo{
+  width: 25%;
+  height: 25%;
+}
