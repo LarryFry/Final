@@ -1,4 +1,6 @@
 <?php
+require('model/database.php');
+require('model/products_db.php');
     /*Get Default action and access level*/
 
   $action = filter_input(INPUT_POST, 'action');
@@ -64,6 +66,7 @@ if($accessType == "admin"){
         include("public/details.php");
       }
       if($action == "products_page"){
+        $products = get_products();
         include("public/products.php");
       }
       if($action == "about_page"){
