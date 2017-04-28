@@ -1,5 +1,5 @@
 
-<?php include("../view/nav.php"); ?>
+<?php include("./view/nav.php"); ?>
 
     <h1>Customer's Product Page</h1>
 
@@ -18,4 +18,4 @@
     </form>
 
 
-  <?php include("../view/footer.php"); ?>
+  <?php include("./view/footer.php"); ?>

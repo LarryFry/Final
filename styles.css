@@ -1,9 +1,24 @@
 Body{
   Margin: auto;
+  font-family: 'Trocchi', serif;
 }
 
 /* Navigation styling */
 .logo{
   width: 25%;
   height: 25%;
+}
+.nav{
+  width:90%;
+  margin:auto;
+  text-align: center;
+}
+.nav-bar {
+  list-style-type: none;
+}
+.nav-bar li{
+  display:inline-block;
+}
+.right-nav{
+  padding-left: 50px;
 }
