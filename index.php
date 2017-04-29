@@ -1,6 +1,6 @@
 <?php
-require('model/database.php');
-require('model/products_db.php');
+require('./model/database.php');
+require('./model/products_db.php');
     /*Get Default action and access level*/
 
   $action = filter_input(INPUT_POST, 'action');
@@ -8,7 +8,7 @@ require('model/products_db.php');
       $action = filter_input(INPUT_GET, 'action');
       /*Default Action*/
       if($action == NULL){
-        $action = "products_page";
+        $action = "home";
       }
     }
 
@@ -28,7 +28,7 @@ if($accessType == "customer"){
 }
 
 if($accessType == "admin"){
-  takeMeAway("admin");
+  takeMeAway("admin", $action);
 }
 
 
@@ -36,28 +36,29 @@ if($accessType == "admin"){
   /*Default Page*/
 
   function takeMeAway($access, $action){
+    //If "admin" block below
     if($access == "admin"){
       if($action == "cart"){
-        include("cart/cart.php");
+        echo("Tried to go to 'admin view' page that doesn't have one.\n Make a JS alert or something, and redirect them to home/home.php.");
+        echo("Or we can flash the button or something, indicating that the button is unclickable at this time.");
       }
       if($action == "details"){
-        include("public/details.php");
+        echo("Tried to go to 'admin view' page that doesn't have one.\n Make a JS alert or something, and redirect them to home/home.php.");
+        echo("Or we can flash the button or something, indicating that the button is unclickable at this time.");
       }
-      if($action == "admin_about_edit"){
-        include("admin/adminAboutEdit.php");
+      if($action == "about_page"){
+        include("add_or_edit/addOrEditAbout.php");
       }
-      if($action == "admin_about_add"){
-        include("admin/adminAboutAdd.php");
+      if($action == "products_page"){
+        include("add_or_edit/addOrEditProducts.php");
       }
-      if($action == "admin_products_edit"){
-        include("admin/adminProductsEdit.php");
-      }
-      if($action == "admin_products_add"){
-        include("admin/adminProductsAdd.php");
+      if($action == "home"){
+        include("home/home.php");
       }
     }//End of if "admin"
 
 
+    //If "customer" block below
     if($access == "customer"){
       if($action == "cart"){
         include("cart/cart.php");
@@ -71,6 +72,9 @@ if($accessType == "admin"){
       }
       if($action == "about_page"){
         include("public/about.php");
+      }
+      if($action == "home"){
+        include("home/home.php");
       }
 
 

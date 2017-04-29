@@ -1,21 +1,29 @@
 
 <?php include("./view/nav.php"); ?>
 
-    <h1>Customer's Product Page</h1>
+    <h1>Customer's Product Page </h1>
+    <div class="productsFormContainer">
+      <?php foreach($products as $product) : ?>
+        <div class="productsFormContainer2">
+          <!-- Here is the Product Form (Goes to Details Page)-->
+          <form class="productsForm" action="." method="POST">
+            <div onclick="javascript:this.parentNode.submit();">
+              <img src='images/<?php echo $product['ImageCode'] ?>' />
+              <h2><?php echo $product['ProductName'] ?></h2>
+              <h3>List Price: $<?php echo $product['Price'] ?></h3>
+              <input type="hidden" name="productID" value="<?php echo $product['ID']?>" />
+              <input type="hidden" name="action" value="details" />
+            </div>
+          </form>
 
-    <!-- Display the Products in the Database. When the form is clicked, use JS and submit it.-->
-    <!-- This is hardcoded now, Larry has the dynamic way to do it. This will work for hardcode logic until we get connected to the DB and start pulling in.-->
-    <?php foreach($products as $product) : ?>
-      <form class="productsForm" action="." method="POST">
-        <div onclick="javascript:this.parentNode.submit();">
-          <img src='images/<?php echo $product['ImageCode'] ?>' />
-          <h2><?php echo $product['ProductName'] ?></h2>
-          <h3>List Price: <?php echo $product['Price'] ?></h3>
-          <input type="hidden" name="productID" value="<?php echo $product['ID']?>" />
-          <input type="hidden" name="action" value="details" />
+          <!-- Here is the "Cart" form. (Goes to Cart Page) -->
+          <form class="" action="." method="post">
+            <input type="hidden" name="action" value="cart">
+            <input class="cartBtn" type="submit" value="Add To Cart">
+          </form>
         </div>
-      </form>
-    <?php endforeach; ?>
+      <?php endforeach; ?>
+    </div>
 
 
   <?php include("./view/footer.php"); ?>

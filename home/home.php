@@ -1,5 +1,5 @@
 <?php include("./view/nav.php"); ?>
 
-    <h1>This is the cart.</h1>
+    <h1>Home Page</h1>
 
 <?php include("./view/footer.php"); ?>
