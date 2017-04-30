@@ -1,0 +1,8 @@
+Added Cart Functionality 
+	-When looping through all items in products.php, every "Add to Cart" button contains
+	all of the information about it's product.
+		-When that particular cart button is pressed, the variables are posted.
+		-From there, $_SESSION['cart'][prodID][whatever] is filled dynamically.
+	-Used 2dimensional $_SESSION array to hold cart values
+
+	-Removed extra white space around image files
