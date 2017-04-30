@@ -6,3 +6,5 @@ Added Cart Functionality
 	-Used 2dimensional $_SESSION array to hold cart values
 
 	-Removed extra white space around image files
+	
+	-cart/cart.php loop through all $_SESSION['cart'] variables and outputs them.
