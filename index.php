@@ -1,7 +1,11 @@
 <?php
 require('./model/database.php');
 require('./model/products_db.php');
-    /*Get Default action and access level*/
+
+if(empty($_POST) && empty($_GET)){//If $_POST and $_GET aren't set, start a new session. This will hold the cart info.
+  session_start();
+}
+
 
   $action = filter_input(INPUT_POST, 'action');
   if ($action == NULL) {

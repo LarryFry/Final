@@ -34,7 +34,7 @@ body{
 }
 
 .nav-bar li a:hover{
-  color:rgb(255, 60, 60); /*I don't care what the color is.*/
+  color:rgb(255, 60, 60);
 }
 .right-nav{
   padding-left: 50px;
@@ -42,23 +42,73 @@ body{
 
 .productsFormContainer{
   text-align: center;
+  width: 60%;
+  margin: 0 auto;
 }
 
+.productsFormContainer2{
+  margin-top:5vh;
+  border-top:3px solid black;
+  border-bottom: 3px solid black;
+}
 
 .cartBtn{
   text-align: center;
 }
 .productsForm{
   display: inline-block;
-  border-top:2px solid black;
-  border-bottom:2px solid black;
   width:35%;
-  margin-bottom:5vh;
   margin-left: 2vw;
   margin-right: 2vw;
 }
 
 .productsForm img{
   height:30vh;
-  width:24.5vw;
+  width:20vw;
+}
+
+
+
+
+
+/*
+  cart/cart.php
+*/
+
+.cartItem{
+  border:2px solid black;
+  width:80%;
+  margin: 0 auto;
+  margin-top: 20px;
+  box-shadow: 5px 5px 10px #888888;
+}
+
+.cartItem img{
+  height: 100px;
+  width: 150px;
+  text-align: left;
+}
+
+.cartItemHeader{
+  position: relative;
+  bottom:4vh;
+  left:10px;
+  display: inline-block;
+}
+
+.price{
+  color: green;
+}
+
+.cartQtyBox{
+  display: block;
+}
+
+.qtyBoxAndLabel h3{
+  display: inline-block;
+}
+
+.qtyBoxAndLabel input{
+  display: inline-block;
+  width:50px;
 }

@@ -1,5 +1,7 @@
-
-<?php include("./view/nav.php"); ?>
+<?php
+  include("./view/nav.php");
+  session_start();
+  ?>
 
     <h1>Customer's Product Page </h1>
     <div class="productsFormContainer">
@@ -19,6 +21,14 @@
           <!-- Here is the "Cart" form. (Goes to Cart Page) -->
           <form class="" action="." method="post">
             <input type="hidden" name="action" value="cart">
+
+            <!-- These will be posted, and then stored in session-->
+            <input type="hidden" name="prodName" value="<?php echo($product['ProductName']);?>">
+            <input type="hidden" name="prodID" value="<?php echo($product['ID']);?>">
+            <input type="hidden" name="imgCode" value="<?php echo($product['ImageCode']);?>">
+            <input type="hidden" name="price" value="<?php echo($product['Price']);?>">
+            <input style="width:20px;"type="text" name="qty" value="1">
+
             <input class="cartBtn" type="submit" value="Add To Cart">
           </form>
         </div>
