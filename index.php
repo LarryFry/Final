@@ -51,10 +51,16 @@ if($accessType == "admin"){
         echo("Or we can flash the button or something, indicating that the button is unclickable at this time.");
       }
       if($action == "about_page"){
-        include("add_or_edit/addOrEditAbout.php");
+        include("admin/adminAbout.php");
       }
       if($action == "products_page"){
-        include("add_or_edit/addOrEditProducts.php");
+        include("admin/adminProducts.php");
+      }
+      if($action == "add_employee"){
+        include("admin/adminAboutAdd.php");
+      }
+      if($action == "add_product"){
+        include("admin/adminProductsAdd.php");
       }
       if($action == "home"){
         include("home/home.php");
