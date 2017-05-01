@@ -22,6 +22,4 @@
       });
     });
   </script>
-
-  
 <?php include("./view/footer.php"); ?>
