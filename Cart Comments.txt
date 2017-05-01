@@ -1,8 +1,12 @@
-Added Cart Functionality 
-	-When looping through all items in products.php, every "Add to Cart" button contains
-	all of the information about it's product.
-		-When that particular cart button is pressed, the variables are posted.
-		-From there, $_SESSION['cart'][prodID][whatever] is filled dynamically.
-	-Used 2dimensional $_SESSION array to hold cart values
+												     ***PANIC***
+										On cart.php, there is a stray "]" and I have no ides where it is coming from.
 
-	-Removed extra white space around image files
+
+Added a carosel to the home page
+	-There is a nice little library called "Slick". It works really well for carosels. It uses JQuery.
+
+
+Began work on the footer
+
+
+

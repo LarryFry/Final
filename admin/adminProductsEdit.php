@@ -3,4 +3,4 @@
 
 	  <h1>Admin Edit Product</h1>
 
-<?php include("./view/footer.php") ?>
+<?php// include("./view/footer.php") ?>

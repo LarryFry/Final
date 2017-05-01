@@ -9,15 +9,19 @@ if($access == "customer"){
 if($access == "admin"){
   $accessOpposite = "customer";
 }
-
  ?>
 
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="./styles.css" />
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" type="text/css" href="./3rd_Party_Libraries/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="./3rd_Party_Libraries/slick/slick-theme.css"/>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Trocchi" rel="stylesheet">
+
+
   </head>
   <body>
     <div class="nav">

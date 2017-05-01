@@ -1,4 +1,4 @@
-<?php
+]<?php
   include("./view/nav.php");
   session_start();
 ?>
@@ -9,7 +9,7 @@
     <?php
       //Retrieve the information form that product's submitted form
 
-      //if qty is a number, execute the code below.
+      //if qty is a number, execute the code below. (if qty > 0 can be the condition)
       $link = $_POST['prodID'];
       $prodName = $_POST['prodName'];
       $prodImg = $_POST['imgCode'];
@@ -21,7 +21,6 @@
       $_SESSION['cart'][$link]['price'] = $prodPrice;
       $_SESSION['cart'][$link]['img'] = $prodImg;
       $_SESSION['cart'][$link]['qty'] = $quantity;
-      $_SESSION['cart'][$link]['ID'] = $link;
 
     ?>
       <!-- Print out Cart Contents-->
