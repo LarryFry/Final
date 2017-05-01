@@ -1,6 +1,7 @@
 <?php
 require('./model/database.php');
 require('./model/products_db.php');
+require('./model/employees_db.php');
 
 if(empty($_POST) && empty($_GET)){//If $_POST and $_GET aren't set, start a new session. This will hold the cart info.
   session_start();
@@ -75,6 +76,7 @@ if($accessType == "admin"){
         include("public/products.php");
       }
       if($action == "about_page"){
+        $employees = get_employees();
         include("public/about.php");
       }
       if($action == "home"){
