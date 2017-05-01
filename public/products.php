@@ -13,6 +13,7 @@
               <img src='images/<?php echo $product['ImageCode'] ?>' />
               <h2><?php echo $product['ProductName'] ?></h2>
               <h3>List Price: $<?php echo $product['Price'] ?></h3>
+              <h3>Quantity In Stock: <?php echo $product['Stock'] ?> </h3>
               <input type="hidden" name="productID" value="<?php echo $product['ID']?>" />
               <input type="hidden" name="action" value="details" />
             </div>
