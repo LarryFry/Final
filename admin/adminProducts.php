@@ -1,5 +1,4 @@
 <?php include("./view/nav.php") ?>
-
 <form action="." method="POST">
   <input type="hidden" name="action" value="add_product">
   <input type="hidden" name="accessType" value="admin">

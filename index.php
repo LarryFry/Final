@@ -88,6 +88,15 @@ if($accessType == "admin"){
       if($action == "home"){
         include("home/home.php");
       }
+      if($action == "add_product"){
+        echo("Tried to go to 'customer view' page that doesn't have one.\n Make a JS alert or something and let them stay, or redirect them to home/home.php.");
+        echo("Or we can flash the button or something, indicating that the button is unclickable at this time.");
+      }
+      if($action == "add_employee"){
+        echo("Tried to go to 'customer view' page that doesn't have one.\n Make a JS alert or something and let them stay, or redirect them to home/home.php.");
+        echo("Or we can flash the button or something, indicating that the button is unclickable at this time.");
+      }
+
 
 
     }//End of if "customer"
