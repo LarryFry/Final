@@ -26,21 +26,28 @@ if(empty($_POST) && empty($_GET)){//If $_POST and $_GET aren't set, start a new 
     }
   }
 
+  $adminAction = filter_input(INPUT_POST, 'adminAction');
+  if($adminAction == NULL){
+    $adminAction = filter_input(INPUT_GET, 'adminAction');
+  }
+
+
+
 
 /*Page Navigation Logic is Called*/
 if($accessType == "customer"){
-  takeMeAway("customer", $action);
+  takeMeAway("customer", $action, $adminAction);
 }
 
 if($accessType == "admin"){
-  takeMeAway("admin", $action);
+  takeMeAway("admin", $action, $adminAction);
 }
 
 
 /*Everything Below This Line checks the $action variable, and then includes the corresponding page.*/
   /*Default Page*/
 
-  function takeMeAway($access, $action){
+  function takeMeAway($access, $action, $adminAction){
     //If "admin" block below
     if($access == "admin"){
       if($action == "cart"){
@@ -52,6 +59,15 @@ if($accessType == "admin"){
         echo("Or we can flash the button or something, indicating that the button is unclickable at this time.");
       }
       if($action == "about_page"){
+        if($adminAction == "edit_employee"){
+          $ID = filter_input(INPUT_POST, 'ID');
+          $FirstName = filter_input(INPUT_POST, 'FirstName');
+          $LastName = filter_input(INPUT_POST, 'LastName');
+          $Title = filter_input(INPUT_POST, 'Title');
+          $Salary = filter_input(INPUT_POST, 'Salary');
+          edit_employee($ID, $FirstName, $LastName, $Title, $Salary);
+        }
+        $employees = get_employees();
         include("admin/adminAbout.php");
       }
       if($action == "products_page"){

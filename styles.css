@@ -181,3 +181,24 @@ footer h2{
   padding:10px 20px 10px 20px;
   background-color: rgb(30,170,30);
 }
+
+/* Employee About Us Page   */
+.employeeList{
+  width:75%;
+  margin: auto;
+  text-align: center;
+}
+.employee{
+  margin: auto;
+  text-align: center;
+  display: inline-block;
+  width:25%;
+}
+.employee img{
+  width: 75%;
+  height: 75%;
+}
+/* Admin About Page*/
+.employee p{
+  display: inline-block;
+}
