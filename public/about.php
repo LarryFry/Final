@@ -6,7 +6,7 @@
     When you shop at Super Doot Paintball, expect the finest service and best gear of any online paintball retailer.
   </p>
 
-  <h1>Our Valued Staff</h1>
+  <h1>Our Beloved Staff</h1>
   <div class="employeeList">
     <?php foreach($employees as $employee) : ?>
       <div class="employee">

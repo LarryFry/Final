@@ -170,3 +170,7 @@ footer h2{
   width: 75%;
   height: 75%;
 }
+/* Admin About Page*/
+.employee p{
+  display: inline-block;
+}
