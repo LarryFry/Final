@@ -1,0 +1,5 @@
+Added styling to edit emplyees
+
+Added new directory "test"
+	-Includes the progress I've made on the image uploading
+		-I've got it working, just havent implemented into project yet.

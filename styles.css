@@ -188,6 +188,12 @@ footer h2{
   margin: auto;
   text-align: center;
 }
+
+.employeeList img{
+  display: block;
+  text-align: center;
+}
+
 .employee{
   margin: auto;
   text-align: center;
@@ -197,8 +203,26 @@ footer h2{
 .employee img{
   width: 75%;
   height: 75%;
+  margin: auto;
 }
 /* Admin About Page*/
+#addEmp{
+  display: block;
+  float: right;
+}
 .employee p{
-  display: inline-block;
+  text-align: left;
+}
+
+.employee input{
+  display: block;
+  text-align: left;
+}
+
+.empTextBoxes{
+  padding-left: 1.87vw;
+}
+
+.changeEmpSub{
+  text-align: center;
 }
