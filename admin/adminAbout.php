@@ -12,10 +12,10 @@
         <form method="POST" action=".">
           <img src='images/<?php echo $employee['ImageCode'] ?>'/>
           <div class="empTextBoxes">
-            <p>First Name: </p><input type="text" name="FirstName" value="<?php echo $employee['FirstName'] ?>"><br />
-            <p>Last Name: </p><input type="text" name="LastName" value="<?php echo $employee['LastName'] ?>"><br />
-            <p>Title: </p><input type="text" name="Title" value="<?php echo $employee['Title'] ?>"><br />
-            <p>Salary: </p><input type="text" name="Salary" value="<?php echo $employee['Salary'] ?>"><br />
+            <p>First Name: </p><input type="text" name="FirstName" value="<?php echo $employee['FirstName'] ?>"><br/>
+            <p>Last Name: </p><input type="text" name="LastName" value="<?php echo $employee['LastName'] ?>"><br/>
+            <p>Title: </p><input type="text" name="Title" value="<?php echo $employee['Title'] ?>"><br/>
+            <p>Salary: </p><input type="text" name="Salary" value="<?php echo $employee['Salary'] ?>"><br/>
             <input type="hidden" value="<?php echo $employee['ID'] ?>" name="ID" />
             <input type="hidden" name="accessType" value="admin">
             <input type="hidden" name="action" value="about_page">

@@ -23,7 +23,7 @@
 
 
     $file_temp_loc = $_FILES['myFile']['tmp_name'];
-    $file_store = "upload/" . $file_name;
+    $file_store = "uploads/" . $file_name;
 
     if(move_uploaded_file($file_temp_loc, $file_store)){
       echo("File uploaded succesfully. Check the dir. to see them!");
