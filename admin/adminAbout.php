@@ -9,7 +9,7 @@
   <div class="employeeList">
     <?php foreach($employees as $employee) : ?>
       <div class="employee">
-<<<<<<< HEAD
+
 
         <!-- Image Upload Form -->
         <form action="" method="POST" enctype="multipart/form-data">
