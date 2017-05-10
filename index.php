@@ -51,8 +51,8 @@ if($accessType == "admin"){
     //If "admin" block below
     if($access == "admin"){
       if($action == "cart"){
-        echo("Tried to go to 'admin view' page that doesn't have one.\n Make a JS alert or something, and redirect them to home/home.php.");
-        echo("Or we can flash the button or something, indicating that the button is unclickable at this time.");
+        $access = "customer";
+        include("cart/cart.php");
       }
       if($action == "details"){
         echo("Tried to go to 'admin view' page that doesn't have one.\n Make a JS alert or something, and redirect them to home/home.php.");
