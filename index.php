@@ -52,6 +52,7 @@ if($accessType == "admin"){
     if($access == "admin"){
       if($action == "cart"){
         $access = "customer";
+        $fromNav ="yes";
         include("cart/cart.php");
       }
       if($action == "details"){
@@ -67,7 +68,7 @@ if($accessType == "admin"){
           $Salary = filter_input(INPUT_POST, 'Salary');
           edit_employee($ID, $FirstName, $LastName, $Title, $Salary);
         }
-          //change_image($ImageCode);  
+          //change_image($ImageCode);
 
         $employees = get_employees();
         include("admin/adminAbout.php");
