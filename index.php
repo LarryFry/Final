@@ -67,6 +67,8 @@ if($accessType == "admin"){
           $Salary = filter_input(INPUT_POST, 'Salary');
           edit_employee($ID, $FirstName, $LastName, $Title, $Salary);
         }
+          //change_image($ImageCode);  
+
         $employees = get_employees();
         include("admin/adminAbout.php");
       }
