@@ -9,6 +9,7 @@
   <div class="employeeList">
     <?php foreach($employees as $employee) : ?>
       <div class="employee">
+<<<<<<< HEAD
 
         <!-- Image Upload Form -->
         <form action="" method="POST" enctype="multipart/form-data">
@@ -16,8 +17,7 @@
             <input type="submit" value="Upload Image">
         </form>
 
-        <!-- Text Fields Editing Form -->
-        <form method="POST" action=".">
+        <form method="POST" action="." class="editEmp">
           <img src='images/<?php echo $employee['ImageCode'] ?>'/>
           <div class="empTextBoxes">
             <p>First Name: </p><input type="text" name="FirstName" value="<?php echo $employee['FirstName'] ?>"><br/>

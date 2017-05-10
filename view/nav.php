@@ -36,5 +36,6 @@ if($access == "admin"){
           <li><a href="?action=home&accessType=<?php echo $access?>"><h2>Home</h2></a></li>
           <li class="right-nav"><a href="?action=products_page&accessType=<?php echo $access?>"><h2>Products</h2></a></li>
           <li class="right-nav"><a href="?action=about_page&accessType=<?php echo$access?>"><h2>About Us</h2></a></li>
+          <li class="right-nav"><a href="?action=cart&fromNav=yes&accessType=<?php echo$access?>"><h2>Cart</h2></a></li>
         </ul>
     </div>
