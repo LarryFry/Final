@@ -71,6 +71,16 @@ if($accessType == "admin"){
         include("admin/adminAbout.php");
       }
       if($action == "products_page"){
+        if($adminAction == "edit_product"){
+          $ID = filter_input(INPUT_POST, 'ID');
+          $ProductName = filter_input(INPUT_POST, 'ProductName');
+          $ProductCode = filter_input(INPUT_POST, 'ProductCode');
+          $Price = filter_input(INPUT_POST, 'Price');
+          $Stock = filter_input(INPUT_POST, 'Stock');
+          $Category = filter_input(INPUT_POST, 'Category');
+          edit_product($ID, $ProductName, $ProductCode, $Price, $Stock, $Category);
+        }
+        $products = get_products();
         include("admin/adminProducts.php");
       }
       if($action == "add_employee"){
