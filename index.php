@@ -51,12 +51,16 @@ if($accessType == "admin"){
     //If "admin" block below
     if($access == "admin"){
       if($action == "cart"){
-        echo("Tried to go to 'admin view' page that doesn't have one.\n Make a JS alert or something, and redirect them to home/home.php.");
-        echo("Or we can flash the button or something, indicating that the button is unclickable at this time.");
+        echo '<script language="javascript">';
+        echo 'alert("No admin section for cart view. Redirecting to the homepage.")';
+        echo '</script>';
+        $action="home";
       }
       if($action == "details"){
-        echo("Tried to go to 'admin view' page that doesn't have one.\n Make a JS alert or something, and redirect them to home/home.php.");
-        echo("Or we can flash the button or something, indicating that the button is unclickable at this time.");
+        echo '<script language="javascript">';
+        echo 'alert("No admin section for details view. Redirecting to the homepage.")';
+        echo '</script>';
+        $action="home";
       }
       if($action == "about_page"){
         if($adminAction == "edit_employee"){
@@ -67,7 +71,13 @@ if($accessType == "admin"){
           $Salary = filter_input(INPUT_POST, 'Salary');
           edit_employee($ID, $FirstName, $LastName, $Title, $Salary);
         }
-          //change_image($ImageCode);
+
+        if($adminAction == "edit_image"){
+          $ID = filter_input(INPUT_POST, 'ID');
+          //Retrieving The File Name From the $_FILES superglobal array.
+          $ImageCode = $_FILES['myFile']['name'];;
+          change_image($ImageCode, $ID);
+        }
 
         $employees = get_employees();
         include("admin/adminAbout.php");

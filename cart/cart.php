@@ -3,7 +3,7 @@
   session_start();
 ?>
 
-    <h1>This is the cart.</h1>
+    <h1>Cart</h1>
 
     <!-- Echo out all of the $_SESSION[cart] Items-->
     <?php

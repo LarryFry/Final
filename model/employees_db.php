@@ -24,8 +24,15 @@
       $statement -> closeCursor();
   }
 
-//  function change_image($ImageCode){
-
-//  };
+  function change_image($ImageCode, $ID){
+    global $db;
+    $query = 'UPDATE employees SET ImageCode = :ImageCode
+                WHERE employees.ID = :ID';
+    $statement = $db->prepare($query);
+    $statement -> bindValue(":ImageCode", $ImageCode);
+    $statement -> bindValue(":ID", $ID);
+    $statement -> execute();
+    $statement -> closeCursor();
+  };
 
 ?>

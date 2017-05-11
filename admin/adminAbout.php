@@ -1,4 +1,5 @@
 <?php include("./view/nav.php") ?>
+<!-- Image uploading Logic Below. -->
 
 <form action="." method="POST">
   <input type="submit" id="addEmp" name="name" value="Add Employee">
@@ -12,6 +13,10 @@
         <!-- Image Upload Form -->
         <form action="" method="POST" enctype="multipart/form-data">
             <input type="file" name="myFile" class="myFile">
+            <input type="hidden" name="accessType" value="admin">
+            <input type="hidden" name="action" value="about_page">
+            <input type="hidden" value="<?php echo $employee['ID'] ?>" name="ID" />
+            <input type="hidden" name="adminAction" value="edit_image">
             <input type="submit" value="Upload Image">
         </form>
 
@@ -32,36 +37,30 @@
       </div>
     <?php endforeach ?>
   </div>
-
-
-
-
-
-
-  <!-- Image uploading Logic Below. -->
   <?php
   if(isset($_FILES['myFile'])){
-  $file_name= $_FILES['myFile']['name'];
-  echo("<br><br>$file_name");
+    $file_name= $_FILES['myFile']['name'];
+    //echo("<br><br>$file_name");
 
-  $file_type= $_FILES['myFile']['type'];
-  echo("<br><br>$file_type");
+    $file_type= $_FILES['myFile']['type'];
+  //  echo("<br><br>$file_type");
 
-  $file_size= $_FILES['myFile']['size'];
-  echo("<br><br>$file_size<br><br>");
+    $file_size= $_FILES['myFile']['size'];
+    //echo("<br><br>$file_size<br><br>");
 
 
-  $file_temp_loc = $_FILES['myFile']['tmp_name'];
-  $file_store = "uploads/" . $file_name;
+   $file_temp_loc = $_FILES['myFile']['tmp_name'];
+    $file_store = "./images/" . $file_name;
 
-  if(move_uploaded_file($file_temp_loc, $file_store)){
-    echo("File uploaded succesfully. Check the dir. to see them!");
-    echo("<img src='$file_store'>");
-    var_dump($_POST);
-  }
-  }
-  else{
-    echo("File not uploaded succesfully.<br><br>");
-  }
+    if(move_uploaded_file($file_temp_loc, $file_store)){
+      echo("<script>alert('File Upload Succesful!')</script>");
+      //echo("<img src='$file_store'>");
+      //var_dump($_POST);
+    }
+    else{
+        echo("<script>alert('Error Uploading File.')</script>");
+      }
+    }
   ?>
+
 <?php include("./view/footer.php") ?>
