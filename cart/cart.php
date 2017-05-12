@@ -30,6 +30,7 @@
       }
 
     ?>
+     <form action="." method="POST">
       <!-- Print out Cart Contents-->
       <?php if(isset($_SESSION['cart'])){ ?>
         <?php foreach($_SESSION['cart'] as $item => $key) : ?>
@@ -47,7 +48,12 @@
         <?php endforeach; ?>
     <?php  } ?>
 
-
+    <input type="hidden" name="productNames" value="<?php $_SESSION['cart'][$item]['name'] ?>" />
+    <input type="hidden" name="productQty" value="<?php $_SESSION['cart'][$item]['qty'] ?>" />
+    <input type="hidden" name="action" value="thank_you" />
+    <input type="hidden" name="accessType" value="customer" />
+    <input type="submit" value="Check Out!" />
+    </form>
 
 
 

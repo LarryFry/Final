@@ -134,6 +134,16 @@ if($accessType == "admin"){
         echo("Tried to go to 'customer view' page that doesn't have one.\n Make a JS alert or something and let them stay, or redirect them to home/home.php.");
         echo("Or we can flash the button or something, indicating that the button is unclickable at this time.");
       }
+      if($action == "thank_you"){
+        session_start();
+        if(isset($_SESSION['cart'])){
+          foreach($_SESSION['cart'] as $item => $key) :
+            $productNames[] = $_SESSION['cart'][$item]['name'];
+            $qtys[] = $_SESSION['cart'][$item]['qty'];
+          endforeach;
+        }
+        include("view/thankyou.php");
+      }
 
 
 
