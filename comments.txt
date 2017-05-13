@@ -1,19 +1,2 @@
-5/10/2017
-
-File Upload Update!
-
-
-
-New Features:
--The File Upload Functionality Updates The Database, and uploads the image to the "images" folder 
-on the web server.
-
-
-ToDo:
--Need to resize the employee images. Right now they are being displayed at native resolution.
--Need to style the "Choose File" and "Upload Image" Buttons. They are stacked and ugly right now.
-
-
-Bugs:
-- On home/home.php the carosel's height increases whenever user tries to go into "admin mode"
-on a page that doesn't have one. (detail view and cart).
+Solved navigation and re-directing problems. Also designed a 
+consistent layout between admin products and admin about us.
