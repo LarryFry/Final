@@ -32,8 +32,6 @@ if(empty($_POST) && empty($_GET)){//If $_POST and $_GET aren't set, start a new 
   }
 
 
-
-
 /*Page Navigation Logic is Called*/
 if($accessType == "customer"){
   takeMeAway("customer", $action, $adminAction);
@@ -52,15 +50,15 @@ if($accessType == "admin"){
     if($access == "admin"){
       if($action == "cart"){
         echo '<script language="javascript">';
-        echo 'alert("No admin section for cart view. Redirecting to the homepage.")';
+        echo 'alert("No admin section for cart view. Changing Access Level to Customer.")';
         echo '</script>';
-        $action="home";
+        $access = "customer";
       }
       if($action == "details"){
         echo '<script language="javascript">';
-        echo 'alert("No admin section for details view. Redirecting to the homepage.")';
+        echo 'alert("No admin section for details view. Redirecting to Admin Products.")';
         echo '</script>';
-        $action="home";
+        $action="products_page";
       }
       if($action == "about_page"){
         if($adminAction == "edit_employee"){
@@ -109,6 +107,18 @@ if($accessType == "admin"){
 
     //If "customer" block below
     if($access == "customer"){
+      if($action == "add_product"){
+        echo '<script language="javascript">';
+        echo 'alert("No customer section for add employee view. Redirecting to Products.")';
+        echo '</script>';
+        $action="products_page";
+      }
+      if($action == "add_employee"){
+        echo '<script language="javascript">';
+        echo 'alert("No customer section for add product view. Redirecting to About Us.")';
+        echo '</script>';
+        $action="about_page";
+      }
       if($action == "cart"){
         include("cart/cart.php");
       }
@@ -126,17 +136,6 @@ if($accessType == "admin"){
       if($action == "home"){
         include("home/home.php");
       }
-      if($action == "add_product"){
-        echo("Tried to go to 'customer view' page that doesn't have one.\n Make a JS alert or something and let them stay, or redirect them to home/home.php.");
-        echo("Or we can flash the button or something, indicating that the button is unclickable at this time.");
-      }
-      if($action == "add_employee"){
-        echo("Tried to go to 'customer view' page that doesn't have one.\n Make a JS alert or something and let them stay, or redirect them to home/home.php.");
-        echo("Or we can flash the button or something, indicating that the button is unclickable at this time.");
-      }
-
-
-
     }//End of if "customer"
   }//End of whatPage
 

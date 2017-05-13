@@ -28,6 +28,7 @@ if($access == "admin"){
       <form class="" action="." method="post" style="text-align:right;">
         <input type="hidden" name="accessType" value="<?php echo $accessOpposite ?>">
         <input type="hidden" name="action" value="<?php echo $action?>">
+        <input type="hidden" name="fromNav" value="yes">
         <input type="submit" name="" value="<?php echo"Switch to $accessOpposite view"?>" style="padding:12px 20px 12px 20px; margin-right:1vw;">
       </form>
       <img class="logo" src="./images/logo.png" alt="Logo" />

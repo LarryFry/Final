@@ -182,15 +182,10 @@ footer h2{
   background-color: rgb(30,170,30);
 }
 
-/* Employee About Us Page   */
-.employeeList{
-  width:75%;
-  margin: auto;
-  text-align: center;
-}
 
-.employeeList img{
-  display: block;
+/* About Us Page   */
+.employeeList{
+  margin: auto;
   text-align: center;
 }
 
@@ -201,33 +196,34 @@ footer h2{
   width:25%;
 }
 .employee img{
-  width: 75%;
-  height: 75%;
+  height:19vh;
+  width:12vw;
   margin: auto;
+  margin-top: 3vh;
+  border:1px solid black;
 }
 
-/* Admin About Page*/
+/* Admin About Us Page*/
 #addEmp{
   display: block;
   float: right;
 }
-.employee p{
-  text-align: left;
+
+.myFile{
+  position: relative;
+  left: 1.4vw;
 }
 
-.employee input{
-  display: block;
-  text-align: left;
+#imgUpload{
+  position: relative;
+  right:1.3vw;
 }
 
-.empTextBoxes{
-  padding-left: 1.87vw;
+.employeeTextForm p{
+  margin-top: 1.4vh;
 }
 
 .changeEmpSub{
-  text-align: center;
-}
-
-.editEmp{
-  height: 100%;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
 }

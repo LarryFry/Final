@@ -10,6 +10,9 @@
       //Retrieve the information form that product's submitted form
       //Determine whether they're here from the cart or from the nav's "cart" link.
       $fromNav = filter_input(INPUT_GET, 'fromNav');
+      if(!isset($fromNav)){
+        $fromNav = filter_input(INPUT_POST, 'fromNav');
+      }
 
       //if qty is a number, execute the code below. (if qty > 0 can be the condition)
       if($fromNav != 'yes'){
