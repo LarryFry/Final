@@ -136,6 +136,17 @@ if($accessType == "admin"){
       if($action == "home"){
         include("home/home.php");
       }
+      
+      if($action == "thank_you"){
+        session_start();
+        if(isset($_SESSION['cart'])){
+          foreach($_SESSION['cart'] as $item => $key) :
+            $productNames[] = $_SESSION['cart'][$item]['name'];
+            $qtys[] = $_SESSION['cart'][$item]['qty'];
+          endforeach;
+        }
+        include("view/thankyou.php");
+      }
     }//End of if "customer"
   }//End of whatPage
 
