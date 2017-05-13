@@ -1,0 +1,23 @@
+﻿DROP TABLE 'products';
+
+
+CREATE TABLE `products` (
+  `ID` int(50) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `ProductName` varchar(255) NOT NULL,
+  `ProductCode` varchar(100) NOT NULL,
+  `Price` int(20) NOT NULL,
+  `Stock` int(20) NOT NULL,
+  `ImageCode` varchar(255) NOT NULL,
+  `Category` varchar(255) NOT NULL,
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+
+INSERT INTO `products` (`ID`, `ProductName`, `ProductCode`, `Price`, `Stock`, `ImageCode`, `Category`) 
+VALUES
+(2, 'Impulse Paintball Marker', 'Impulse', 1050, 2, 'impulse.jpg', 'gun'),
+(3, 'Co2 Tank', 'CoreCO2', 18, 15, 'coreCO2.jpg', 'tank'),
+(4, 'Co2 12 Gram Singles', '12GSingle', 3, 20, '12GSingle.jpg', 'tank'),
+(5, 'Gen X Goggles', 'GenXGog', 24, 10, 'genx.jpg', 'goggle'),
+(6, 'Spyder Paintball Marker', 'SpyVGun', 80, 6, 'spyderGun.jpg', 'gun');

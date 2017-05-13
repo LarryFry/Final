@@ -1,2 +1,4 @@
-Solved navigation and re-directing problems. Also designed a 
-consistent layout between admin products and admin about us.
+Weird Bug: 
+The redirect JS alerts are echoed from the index page. Any of these alerts cause the page's 
+navigation to be resized slightly. I don't know why this is happening. It isn't project-breaking but
+I don't have an explanation for it yet.

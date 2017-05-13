@@ -42,8 +42,8 @@ if($accessType == "admin"){
 }
 
 
-/*Everything Below This Line checks the $action variable, and then includes the corresponding page.*/
-  /*Default Page*/
+/*Everything Below This Line checks the $action variable,
+  and then includes the corresponding page.*/
 
   function takeMeAway($access, $action, $adminAction){
     //If "admin" block below
@@ -120,6 +120,9 @@ if($accessType == "admin"){
         $action="about_page";
       }
       if($action == "cart"){
+        echo '<script language="javascript">';
+        echo 'alert("YER GOIN TO THE CART NOW")';
+        echo '</script>';
         include("cart/cart.php");
       }
       if($action == "details"){
@@ -136,7 +139,7 @@ if($accessType == "admin"){
       if($action == "home"){
         include("home/home.php");
       }
-      
+
       if($action == "thank_you"){
         session_start();
         if(isset($_SESSION['cart'])){
@@ -148,6 +151,6 @@ if($accessType == "admin"){
         include("view/thankyou.php");
       }
     }//End of if "customer"
-  }//End of whatPage
+  }//End of takeMeAway
 
 ?>

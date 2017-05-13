@@ -1,0 +1,17 @@
+﻿DROP TABLE employees;
+
+
+CREATE TABLE `employees` (
+  `ID` int(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `FirstName` varchar(100) NOT NULL,
+  `LastName` varchar(100) NOT NULL,
+  `Title` varchar(255) NOT NULL,
+  `ImageCode` varchar(255) NOT NULL,
+  `Salary` int(50) NOT NULL
+) 
+
+
+INSERT INTO `employees` (`ID`, `FirstName`, `LastName`, `Title`, `ImageCode`, `Salary`) VALUES
+(1, 'Parry', 'Painball', 'Owner/CEO', 'parry.jpg', 50000),
+(2, 'Sammy', 'Davis', 'Croissant', 'croissant.jpg', 40000),
+(3, 'Trish', 'Hatfield', 'HR Manager', 'trish.jpg', 45000);
