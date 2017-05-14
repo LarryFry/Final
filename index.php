@@ -70,16 +70,18 @@ if($accessType == "admin"){
           edit_employee($ID, $FirstName, $LastName, $Title, $Salary);
         }
 
+        //Edit Pages Img Logic
         if($adminAction == "edit_image"){
           $ID = filter_input(INPUT_POST, 'ID');
-          //Retrieving The File Name From the $_FILES superglobal array.
-          $ImageCode = $_FILES['myFile']['name'];;
+          $ImageCode = $_FILES['empImg']['name'];
           change_image($ImageCode, $ID);
         }
 
         $employees = get_employees();
         include("admin/adminAbout.php");
-      }
+      }//End of action="about_page"
+
+
       if($action == "products_page"){
         if($adminAction == "edit_product"){
           $ID = filter_input(INPUT_POST, 'ID');
@@ -93,12 +95,32 @@ if($accessType == "admin"){
         $products = get_products();
         include("admin/adminProducts.php");
       }
+
       if($action == "add_employee"){
         include("admin/adminAboutAdd.php");
       }
+
       if($action == "add_product"){
+        $ProductName = filter_input(INPUT_POST, 'ProductName');
+        $ProductCode = filter_input(INPUT_POST, 'ProductCode');
+        $Price = filter_input(INPUT_POST, 'Price');
+        $Stock = filter_input(INPUT_POST, 'Stock');
+        $Category = filter_input(INPUT_POST, 'Category');
+
+        if($adminAction == 'submit_image'){
+          $ImageCode = $_FILES['prodImg']['name'];
+          // Instanciate the new product with just Image code and an ID.
+          insertImageCode($ImageCode);
+          //Get ID based off ImageCode
+          $ID = get_ID($ImageCode);
+        }
+        if($adminAction == 'submit_text'){
+          echo("I'm trying to insert everything.");
+          insertProdTextFields($ProductName, $ProductCode, $Price, $Stock, $Category, $ID);
+        }
         include("admin/adminProductsAdd.php");
       }
+
       if($action == "home"){
         include("home/home.php");
       }

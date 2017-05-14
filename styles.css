@@ -204,17 +204,8 @@ footer h2{
 }
 
 /* Admin About Us Page*/
-#addEmp{
-  display: block;
-  float: right;
-}
 
-.myFile{
-  position: relative;
-  left: 1.4vw;
-}
-
-#imgUpload{
+.imgUpload{
   position: relative;
   right:1.3vw;
 }
@@ -227,3 +218,5 @@ footer h2{
   margin-top: 1vh;
   margin-bottom: 1vh;
 }
+
+/* Admin About Add */

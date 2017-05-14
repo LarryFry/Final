@@ -1,4 +1,23 @@
-Weird Bug: 
-The redirect JS alerts are echoed from the index page. Any of these alerts cause the page's 
+Weird Bug:
+The redirect JS alerts are echoed from the index page. Any of these alerts cause the page's
 navigation to be resized slightly. I don't know why this is happening. It isn't project-breaking but
 I don't have an explanation for it yet.
+
+
+
+SQL:
+
+Click on the paintball database, and click on the products table. Go to the top of the page where
+it says "structure" and make default for every column (except ID) NULL.
+
+
+Here is the sql for the employees database:
+
+ALTER TABLE `employees` CHANGE `FirstName` `FirstName`
+VARCHAR(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci
+NULL DEFAULT NULL, CHANGE `LastName` `LastName` VARCHAR(100)
+CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+CHANGE `Title` `Title` VARCHAR(255) CHARACTER SET latin1 COLLATE
+latin1_swedish_ci NULL DEFAULT NULL, CHANGE `ImageCode` `ImageCode`
+VARCHAR(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+CHANGE `Salary` `Salary` INT(50) NULL DEFAULT NULL;
