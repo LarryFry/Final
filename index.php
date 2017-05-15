@@ -171,6 +171,7 @@ if($accessType == "admin"){
             $qtys[] = $_SESSION['cart'][$item]['qty'];
           endforeach;
         }
+        updateStock($productNames, $qtys);
         include("view/thankyou.php");
       }
     }//End of if "customer"

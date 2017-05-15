@@ -29,6 +29,20 @@ function edit_product($ID, $ProductName, $ProductCode, $Price, $Stock, $Category
     $statement -> execute();
     $statement -> closeCursor();
 }
+function updateStock($productNames, $qtys){
+  foreach ($productNames as $key => $value){
+    global $db;
+    $query = "UPDATE products
+              SET Stock = Stock - $qtys[$key]
+              WHERE products.ProductName = '$value'";
+    $statement = $db->prepare($query);
+    $statement -> execute();
+    $statement -> closeCursor();
+    echo $value;
+  }
+}
+
+
 
 //This will instanciate the new product with just Image code and an ID.
 function insertImageCode($ImageCode){
