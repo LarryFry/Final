@@ -113,11 +113,12 @@ if($accessType == "admin"){
           insertImageCode($ImageCode);
           //Get ID based off ImageCode
           $ID = get_ID($ImageCode);
-        }
-        if($adminAction == 'submit_text'){
-          echo("I'm trying to insert everything.");
+          $result = $ID->fetch(PDO::FETCH_ASSOC);
+          $ID = $result['ID'];
+          echo("This is ID within submit_image:" . $ID);
           insertProdTextFields($ProductName, $ProductCode, $Price, $Stock, $Category, $ID);
         }
+
         include("admin/adminProductsAdd.php");
       }
 

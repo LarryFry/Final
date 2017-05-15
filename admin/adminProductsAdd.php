@@ -5,30 +5,24 @@
 		<div class="employeeImageForm">
 			<img src='images/<?php echo($_FILES['prodImg']['name'])?>'/>
 			<!-- Image Upload Form -->
-			<form action="." method="POST" enctype="multipart/form-data">
+			<form action="." method="POST" enctype="multipart/form-data" class="editEmp">
 					<input type="file" name="prodImg">
 					<input type="hidden" name="accessType" value="admin">
 					<input type="hidden" name="action" value="add_product">
 					<input type="hidden" name="adminAction" value="submit_image">
-			</form>
-		</div>
-		<div class="employeeTextForm">
-			<form method="POST" action="." class="editEmp">
-					<p>Product Name: </p><input type="text" name="productName" value=""><br/>
-					<p>Product Code: </p><input type="text" name="productCode" value=""><br/>
+
+					<!-- Experimental -->
+					<p>Product Name: </p><input type="text" name="ProductName" value=""><br/>
+					<p>Product Code: </p><input type="text" name="ProductCode" value=""><br/>
 					<p>Price: </p><input type="text" name="Price" value=""><br/>
 					<p>Stock: </p><input type="text" name="Stock" value=""><br/>
 					<p>Category: </p><input type="text" name="Category" value=""><br/>
-					<input type="hidden" name="accessType" value="admin">
-					<input type="hidden" name="action" value="add_product">
-					<input type="hidden" name="adminAction" value="submit_text">
 					<input type="submit" value="Add Product" class="changeEmpSub"/>
 			</form>
 		</div>
 	</div>
 
-
-<!-- Move image into /images folder-->
+<!-- Move image into /images folder -->
 <?php
 	if(isset($_FILES['prodImg'])){
 		$file_name= $_FILES['prodImg']['name'];

@@ -49,9 +49,8 @@ function get_ID($ImageCode){
   $statement = $db->prepare($query);
   $statement -> bindValue(":ImageCode", $ImageCode);
   $statement -> execute();
-  //return $statement;
-  $statement -> closeCursor();
   return $statement;
+  $statement -> closeCursor();
 }
 
 function add_img($ImageCode, $ID){
@@ -64,10 +63,11 @@ function add_img($ImageCode, $ID){
   $statement -> execute();
   $statement -> closeCursor();
 };
-  
+
 function insertProdTextFields($ProductName, $ProductCode, $Price, $Stock, $Category, $ID){
   global $db;
-  $query = 'INSERT INTO products (ProductName, ProductCode, Price, Stock, Category) VALUES (:prodName, :prodCode, :price, :stock, :category)
+  $query = 'UPDATE products
+	           SET ProductName = :prodName , ProductCode = :prodCode, Price = :price, Stock = :stock, Category = :category
               WHERE products.ID = :ID';
   $statement = $db->prepare($query);
   $statement -> bindValue(":prodName", $ProductName);
