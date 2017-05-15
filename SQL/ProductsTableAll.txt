@@ -8,7 +8,7 @@ CREATE TABLE `products` (
   `Price` int(20) NOT NULL,
   `Stock` int(20) NOT NULL,
   `ImageCode` varchar(255) NOT NULL,
-  `Category` varchar(255) NOT NULL,
+  `Category` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
