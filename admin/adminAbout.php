@@ -2,7 +2,7 @@
 <!-- Image uploading Logic Below. -->
 
 <form action="." method="POST">
-  <input type="submit" id="addEmp" name="name" value="Add Employee">
+  <input type="submit" id="addEmp" name="name" value="Add Employee" style="float:right;">
   <input type="hidden" name="accessType" value="admin">
   <input type="hidden" name="action" value="add_employee">
 </form>
@@ -51,7 +51,7 @@
 
 
    $file_temp_loc = $_FILES['empImg']['tmp_name'];
-    $file_store = "./images/" . $file_name;
+   $file_store = "./images/" . $file_name;
 
     if(move_uploaded_file($file_temp_loc, $file_store)){
       echo("<script>alert('File Upload Succesful!')</script>");

@@ -1,17 +1,16 @@
 <?php include("./view/nav.php") ?>
 	<h1>Admin Add Product</h1>
 
-	<div class="employee">
-		<div class="employeeImageForm">
-			<img src='images/<?php echo($_FILES['prodImg']['name'])?>'/>
+	<div class="productAddFormContainer">
+		<div class="productAddForm">
+			<img src='images/<?php echo($_FILES['prodImg']['name'])?>' alt="Choose An Image"/>
 			<!-- Image Upload Form -->
-			<form action="." method="POST" enctype="multipart/form-data" class="editEmp">
-					<input type="file" name="prodImg">
+			<form action="." method="POST" enctype="multipart/form-data" class="addProd">
+					<input type="file" name="prodImg" class="chooseFile">
 					<input type="hidden" name="accessType" value="admin">
 					<input type="hidden" name="action" value="add_product">
-					<input type="hidden" name="adminAction" value="submit_image">
+					<input type="hidden" name="adminAction" value="submit_add_form">
 
-					<!-- Experimental -->
 					<p>Product Name: </p><input type="text" name="ProductName" value=""><br/>
 					<p>Product Code: </p><input type="text" name="ProductCode" value=""><br/>
 					<p>Price: </p><input type="text" name="Price" value=""><br/>
@@ -22,13 +21,15 @@
 		</div>
 	</div>
 
+
+
+
 <!-- Move image into /images folder -->
 <?php
 	if(isset($_FILES['prodImg'])){
 		$file_name= $_FILES['prodImg']['name'];
 		$file_type= $_FILES['prodImg']['type'];
 		$file_size= $_FILES['prodImg']['size'];
-
 
 
 	 $file_temp_loc = $_FILES['prodImg']['tmp_name'];
@@ -41,10 +42,5 @@
 				//echo("<script>alert('Error Uploading File.')</script>");
 			}
 		}
-echo("<br><br><br>");
-print_r($_FILES['prodImg']);
-echo("<br><br><br>");
-print_r($_POST);
 ?>
-
 <?php include("./view/footer.php") ?>

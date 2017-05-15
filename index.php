@@ -60,6 +60,9 @@ if($accessType == "admin"){
         echo '</script>';
         $action="products_page";
       }
+
+
+
       if($action == "about_page"){
         if($adminAction == "edit_employee"){
           $ID = filter_input(INPUT_POST, 'ID');
@@ -69,17 +72,16 @@ if($accessType == "admin"){
           $Salary = filter_input(INPUT_POST, 'Salary');
           edit_employee($ID, $FirstName, $LastName, $Title, $Salary);
         }
-
         //Edit Pages Img Logic
         if($adminAction == "edit_image"){
           $ID = filter_input(INPUT_POST, 'ID');
           $ImageCode = $_FILES['empImg']['name'];
           change_image($ImageCode, $ID);
         }
-
         $employees = get_employees();
         include("admin/adminAbout.php");
       }//End of action="about_page"
+
 
 
       if($action == "products_page"){
@@ -96,9 +98,30 @@ if($accessType == "admin"){
         include("admin/adminProducts.php");
       }
 
+
+
       if($action == "add_employee"){
+        $ID = filter_input(INPUT_POST, 'ID');
+        $First = filter_input(INPUT_POST, 'First');
+        $Last = filter_input(INPUT_POST, 'Last');
+        $Title = filter_input(INPUT_POST, 'Title');
+        $Salary = filter_input(INPUT_POST, 'Salary');
+
+        if($adminAction == "submit_add_form"){
+          $ImageCode = $_FILES['empImg']['name'];
+          // Instanciate the new product with just Image code and an ID.
+          insertImageCodeEmp($ImageCode);
+          //Get ID based off ImageCode
+          $ID = get_ID_Emp($ImageCode);
+          $result = $ID->fetch(PDO::FETCH_ASSOC);
+          $ID = $result['ID'];
+          insertEmpTextFields($ID, $First, $Last, $Title, $Salary);
+        }
+
         include("admin/adminAboutAdd.php");
       }
+
+
 
       if($action == "add_product"){
         $ProductName = filter_input(INPUT_POST, 'ProductName');
@@ -107,7 +130,7 @@ if($accessType == "admin"){
         $Stock = filter_input(INPUT_POST, 'Stock');
         $Category = filter_input(INPUT_POST, 'Category');
 
-        if($adminAction == 'submit_image'){
+        if($adminAction == 'submit_add_form'){
           $ImageCode = $_FILES['prodImg']['name'];
           // Instanciate the new product with just Image code and an ID.
           insertImageCode($ImageCode);
@@ -115,17 +138,21 @@ if($accessType == "admin"){
           $ID = get_ID($ImageCode);
           $result = $ID->fetch(PDO::FETCH_ASSOC);
           $ID = $result['ID'];
-          echo("This is ID within submit_image:" . $ID);
           insertProdTextFields($ProductName, $ProductCode, $Price, $Stock, $Category, $ID);
         }
-
         include("admin/adminProductsAdd.php");
       }
+
+
+
+
 
       if($action == "home"){
         include("home/home.php");
       }
     }//End of if "admin"
+
+
 
 
     //If "customer" block below
@@ -136,32 +163,42 @@ if($accessType == "admin"){
         echo '</script>';
         $action="products_page";
       }
+
+
       if($action == "add_employee"){
         echo '<script language="javascript">';
         echo 'alert("No customer section for add product view. Redirecting to About Us.")';
         echo '</script>';
         $action="about_page";
       }
+
+
       if($action == "cart"){
-        echo '<script language="javascript">';
-        echo 'alert("YER GOIN TO THE CART NOW")';
-        echo '</script>';
         include("cart/cart.php");
       }
+
+
       if($action == "details"){
         include("public/details.php");
       }
+
+
       if($action == "products_page"){
         $products = get_products();
         include("public/products.php");
       }
+
+
       if($action == "about_page"){
         $employees = get_employees();
         include("public/about.php");
       }
+
+
       if($action == "home"){
         include("home/home.php");
       }
+
 
       if($action == "thank_you"){
         session_start();
@@ -174,6 +211,8 @@ if($accessType == "admin"){
         updateStock($productNames, $qtys);
         include("view/thankyou.php");
       }
+
+
     }//End of if "customer"
   }//End of takeMeAway
 

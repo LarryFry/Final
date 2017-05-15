@@ -68,6 +68,12 @@ body{
   width:20vw;
 }
 
+
+
+
+
+
+
 /*
   cart/cart.php
 */
@@ -110,8 +116,16 @@ body{
   width:50px;
 }
 
+
+
+
+
+
+
+
+
 /*
-  Footer Below
+  Footer
 */
 
 .pre-footer{
@@ -133,8 +147,14 @@ footer h2{
 }
 
 
+
+
+
+
+
+
 /*
-  Home Below
+  Home
 */
 
 
@@ -151,8 +171,14 @@ footer h2{
 }
 
 
+
+
+
+
+
+
 /*
-  Add Product Below
+  Add Product
 */
 
 .addProduct{
@@ -183,6 +209,13 @@ footer h2{
 }
 
 
+
+
+
+
+
+
+
 /* About Us Page   */
 .employeeList{
   margin: auto;
@@ -203,7 +236,16 @@ footer h2{
   border:1px solid black;
 }
 
-/* Admin About Us Page*/
+
+
+
+
+
+
+
+
+
+/* Edit About Us Page*/
 
 .imgUpload{
   position: relative;
@@ -219,4 +261,47 @@ footer h2{
   margin-bottom: 1vh;
 }
 
-/* Admin About Add */
+
+
+
+
+
+
+
+/* Add About Us Page */
+.productAddFormContainer{
+  text-align: center;
+}
+
+.chooseFile{
+  margin: auto;
+  position: relative;
+  left:34px;
+  margin-bottom: 40px;
+}
+
+.addProd input{
+  margin-bottom: 10px;
+}
+
+
+
+
+
+/*
+  Employee Add Page
+*/
+.empAddFormContainer{
+  text-align: center;
+}
+
+.chooseFile{
+  margin: auto;
+  position: relative;
+  left:34px;
+  margin-bottom: 40px;
+}
+
+.addEmp input{
+  margin-bottom: 18px;
+}
