@@ -72,6 +72,12 @@ if($accessType == "admin"){
           $Salary = filter_input(INPUT_POST, 'Salary');
           edit_employee($ID, $FirstName, $LastName, $Title, $Salary);
         }
+
+        if($adminAction == "delete_emp"){
+          $ID = filter_input(INPUT_POST, 'ID');
+          delete_emp($ID);
+        }
+
         //Edit Pages Img Logic
         if($adminAction == "edit_image"){
           $ID = filter_input(INPUT_POST, 'ID');
@@ -94,6 +100,13 @@ if($accessType == "admin"){
           $Category = filter_input(INPUT_POST, 'Category');
           edit_product($ID, $ProductName, $ProductCode, $Price, $Stock, $Category);
         }
+
+        if($adminAction == "delete_prod"){
+          $ID = filter_input(INPUT_POST, 'ID');
+          delete_prod($ID);
+        }
+
+        
         $products = get_products();
         include("admin/adminProducts.php");
       }

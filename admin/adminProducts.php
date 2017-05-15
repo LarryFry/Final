@@ -23,6 +23,15 @@
             <input type="submit" value="Change Product" class="changeEmpSub"/>
           </div>
         </form>
+        <form class="" action="." method="post">
+          <input type="hidden" value="<?php echo $product['ID'] ?>" name="ID" />
+
+
+          <input type="hidden" name="accessType" value="admin">
+          <input type="hidden" name="action" value="products_page">
+          <input type="hidden" name="adminAction" value="delete_prod">
+          <input type="submit" name="" value="Delete Product">
+        </form>
       </div>
     <?php endforeach ?>
   </div>

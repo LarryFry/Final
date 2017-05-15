@@ -73,4 +73,13 @@
     $statement -> closeCursor();
   }
 
+  function delete_emp($ID){
+    global $db;
+    $query = 'DELETE FROM employees WHERE employees.ID = :ID';
+    $statement = $db->prepare($query);
+    $statement -> bindValue(":ID", $ID);
+    $statement -> execute();
+    $statement -> closeCursor();
+  }
+
 ?>

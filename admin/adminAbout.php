@@ -34,6 +34,16 @@
               <input type="hidden" name="adminAction" value="edit_employee">
               <input type="submit" value="Change Employee" class="changeEmpSub"/>
           </form>
+          <!--  Delete Form -->
+          <form class="" action="." method="post">
+            <input type="hidden" value="<?php echo $employee['ID'] ?>" name="ID" />
+
+
+            <input type="hidden" name="accessType" value="admin">
+            <input type="hidden" name="action" value="about_page">
+            <input type="hidden" name="adminAction" value="delete_emp">
+            <input type="submit" name="" value="Delete Employee">
+          </form>
         </div>
       </div>
     <?php endforeach ?>

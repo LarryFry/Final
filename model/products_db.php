@@ -106,4 +106,15 @@
     $statement -> execute();
     $statement -> closeCursor();
   }
+
+
+
+  function delete_prod($ID){
+    global $db;
+    $query = 'DELETE FROM products WHERE products.ID = :ID';
+    $statement = $db->prepare($query);
+    $statement -> bindValue(":ID", $ID);
+    $statement -> execute();
+    $statement -> closeCursor();
+  }
  ?>

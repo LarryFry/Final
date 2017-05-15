@@ -3,7 +3,7 @@
 
 	<div class="empAddFormContainer">
 		<div class="empAddForm">
-			<img src='images/<?php echo($_FILES['empImg']['name'])?>' alt="Choose An Image"/>
+			<img src='' alt="Choose Employee Image"/>
 			<!-- Image Upload Form -->
 			<form action="." method="POST" enctype="multipart/form-data" class="addEmp">
 					<input type="file" name="empImg" class="chooseFile">

@@ -3,10 +3,10 @@
 
 	<div class="productAddFormContainer">
 		<div class="productAddForm">
-			<img src='images/<?php echo($_FILES['prodImg']['name'])?>' alt="Choose An Image"/>
+			<img src='' alt="Choose Product Image"/>
 			<!-- Image Upload Form -->
-			<form action="." method="POST" enctype="multipart/form-data" class="addProd">
-					<input type="file" name="prodImg" class="chooseFile">
+			<form action="." method="POST" enctype="multipart/form-data" class="addProd" >
+					<input type="file" name="prodImg" class="chooseFile" onchange="readURL(this);">
 					<input type="hidden" name="accessType" value="admin">
 					<input type="hidden" name="action" value="add_product">
 					<input type="hidden" name="adminAction" value="submit_add_form">
