@@ -106,7 +106,13 @@ if($accessType == "admin"){
           delete_prod($ID);
         }
 
-        
+        if($adminAction == "edit_image"){
+          $ID = filter_input(INPUT_POST, 'ID');
+          $ImageCode = $_FILES['prodImg']['name'];
+          change_image_prod($ImageCode, $ID);
+        }
+
+
         $products = get_products();
         include("admin/adminProducts.php");
       }
