@@ -8,8 +8,19 @@
   <div class="employeeList">
     <?php foreach($products as $product) : ?>
       <div class="employee">
-        <form method="POST" action=".">
+        <div class="employeeImageForm">
           <img src='images/<?php echo $product['ImageCode'] ?>'/>
+          <!-- Image Upload Form -->
+          <form action="." method="POST" enctype="multipart/form-data">
+              <input type="file" name="prodImg">
+              <input type="hidden" name="accessType" value="admin">
+              <input type="hidden" name="action" value="products_page">
+              <input type="hidden" value="<?php echo $product['ID'] ?>" name="ID" />
+              <input type="hidden" name="adminAction" value="edit_image">
+              <input type="submit" value="Upload" class="imgUpload">
+          </form>
+        </div>
+        <form method="POST" action=".">
           <div class="employeeTextForm">
             <p>Product Name:  </p><input type="text" name="ProductName" value="<?php echo $product['ProductName'] ?>"><br />
             <p>Product Code: </p><input type="text" name="ProductCode" value="<?php echo $product['ProductCode'] ?>" /><br />
@@ -26,7 +37,6 @@
         <form class="" action="." method="post">
           <input type="hidden" value="<?php echo $product['ID'] ?>" name="ID" />
 
-
           <input type="hidden" name="accessType" value="admin">
           <input type="hidden" name="action" value="products_page">
           <input type="hidden" name="adminAction" value="delete_prod">
@@ -35,4 +45,34 @@
       </div>
     <?php endforeach ?>
   </div>
+
+
+
+
+<!--  Move the image to the images dir.-->
+  <?php
+  if(isset($_FILES['prodImg'])){
+    $file_name= $_FILES['prodImg']['name'];
+    //echo("<br><br>$file_name");
+
+    $file_type= $_FILES['prodImg']['type'];
+  //  echo("<br><br>$file_type");
+
+    $file_size= $_FILES['prodImg']['size'];
+    //echo("<br><br>$file_size<br><br>");
+
+
+   $file_temp_loc = $_FILES['prodImg']['tmp_name'];
+   $file_store = "./images/" . $file_name;
+
+    if(move_uploaded_file($file_temp_loc, $file_store)){
+      echo("<script>alert('File Upload Succesful!')</script>");
+      //echo("<img src='$file_store'>");
+
+    }
+    else{
+        echo("<script>alert('Error Uploading File.')</script>");
+      }
+    }
+  ?>
 <?php include("./view/footer.php") ?>

@@ -90,6 +90,19 @@
 
 
 
+  function change_image_prod($ImageCode, $ID){
+    global $db;
+    $query = 'UPDATE products SET ImageCode = :ImageCode
+                WHERE products.ID = :ID';
+    $statement = $db->prepare($query);
+    $statement -> bindValue(":ImageCode", $ImageCode);
+    $statement -> bindValue(":ID", $ID);
+    $statement -> execute();
+    $statement -> closeCursor();
+  };
+
+
+
 
   function insertProdTextFields($ProductName, $ProductCode, $Price, $Stock, $Category, $ID){
     global $db;
