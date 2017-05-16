@@ -233,6 +233,9 @@ if($accessType == "admin"){
           endforeach;
         }
         updateStock($productNames, $qtys);
+        
+        //Send the email to the admin
+        include("./email/email.php");
         include("view/thankyou.php");
       }
 

@@ -11,7 +11,7 @@
             <h2><?php echo $prod['ProductName'] ?></h2>
             <h3>List Price: <span style="color:green;">$<?php echo $prod['Price'] ?></span></h3>
             <h3>Quantity In Stock: <?php echo $prod['Stock'] ?> </h3>
-            <h3>Description: <?php echo $prod['Description'] ?></h3>
+            <h3 class="desc"><?php echo $prod['Description'] ?></h3>
 
 
         <!-- Here is the "Cart" form. (Goes to Cart Page) -->

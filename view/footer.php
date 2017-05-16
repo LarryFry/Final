@@ -1,7 +1,7 @@
-<div class="pre-footer"></div><!-- Pretty Little Color Thing.-->
+<div class="pre-red"></div><!-- Pretty Little Color Thing.-->
 
   <footer>
-    <h2>Super Doot Paintball &#169;2017</h2>
+    <h3>Super Doot Paintball &#169;2017</h3>
   </footer>
 </body>
 </html>

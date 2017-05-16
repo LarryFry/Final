@@ -22,4 +22,4 @@ CREATE TABLE `products` (
  (3, 'Co2 Tank', 'CoreCO2', 18, 15, 'coreCO2.jpg', 'tank',"It holds and then releases compressed C02. Releasing Greenhouse Gasses has never been so satifying."),
  (4, 'Co2 12 Gram Singles', '12GSingle', 3, 20, '12GSingle.jpg', 'tank','Heating up Earth 12 Grams at a time.'),
  (5, 'Gen X Goggles', 'GenXGog', 24, 10, 'genx.jpg', 'goggle','Keeps you from going blind. It is recommended you wear these.'),
- (6, 'Spyder Paintball Marker', 'SpyVGun', 80, 6, 'spyderGun.jpg', 'gun','Meh. It will do.');
+ (6, 'Spyder Paintball Marker', 'SpyVGun', 80, 6, 'spyderGun.jpg', 'gun', 'Meh. It will do.');

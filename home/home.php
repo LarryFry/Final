@@ -19,19 +19,22 @@
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: true,
-        arrows: true
+        arrows: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
       });
     });
   </script>
   <div class="homeDiscription">
     <h1>We have the Gear you need!</h1>
-    <h3>John Paintson</h3>
+    <h3>Johnny Paintbag</h3>
     <h4>Local Customer/National Champ</h4>
     <div id="customerReview">
       <img src="images/player.jpg" alt="" />
-      <p>I'm John Paintson and I've been playing paintball since I was 3 years old.</p>
+      <p>I'm Johnny Paintbag and I've been playing paintball since I was 3 years old.</p>
       <p>Super Doot Paintball has been an amazing supplier of the gear I need to win.</p>
-      <p>Super Doot has earned my trust and they deserve yours aswell.</p>
+      <p>Super Doot has earned my trust and they deserve yours as well.</p>
 
     </div>
   </div>

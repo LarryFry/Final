@@ -43,7 +43,7 @@
               <div class="cartItemHeader">
               <?php echo '<h2>' . $_SESSION['cart'][$item]['name'].'</h2>'?>
               <?php echo '<h2 class=price>$'.$_SESSION['cart'][$item]['price'].'</h2>'?>
-              <?php echo '<h2 class="">' . $_SESSION['cart'][$item]['desc'].'</h2>'?>
+              <?php echo '<h2 class="desc">' . $_SESSION['cart'][$item]['desc'].'</h2>'?>
             </div>
             <div class="qtyBoxAndLabel">
               <h3>Qty</h3>
@@ -51,13 +51,13 @@
             </div>
           </div>
         <?php endforeach; ?>
-    <?php  } ?>
+        <?php  } ?>
 
-    <input type="hidden" name="productNames" value="<?php $_SESSION['cart'][$item]['name'] ?>" />
-    <input type="hidden" name="productQty" value="<?php $_SESSION['cart'][$item]['qty'] ?>" />
-    <input type="hidden" name="action" value="thank_you" />
-    <input type="hidden" name="accessType" value="customer" />
-    <input type="submit" value="Check Out!" />
+      <input type="hidden" name="productNames" value="<?php $_SESSION['cart'][$item]['name'] ?>" />
+      <input type="hidden" name="productQty" value="<?php $_SESSION['cart'][$item]['qty'] ?>" />
+      <input type="hidden" name="action" value="thank_you" />
+      <input type="hidden" name="accessType" value="customer" />
+      <input type="submit" value="Check Out!" />
     </form>
 
 
@@ -66,9 +66,10 @@
 
     <!-- Debuggin -->
     <?php
-      echo("<br><br><br><b>Here is session:</b> ");
-      Print_r($_SESSION);
-      echo("<br><br><br><b>Here is Post:</b> ");
-      Print_r($_POST);
+      //echo("<br><br><br><b>Here is session:</b> ");
+      //Print_r($_SESSION);
+      //echo("<br><br><br><b>Here is Post:</b> ");
+      //Print_r($_POST);
     ?>
+
 <?php include("./view/footer.php"); ?>

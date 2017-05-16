@@ -34,6 +34,7 @@ if($access == "admin"){
       <img class="logo" src="./images/logo.png" alt="Logo" />
       <h2 style="display:inline; font-size:250%; position:relative; bottom:100px;">Super Doot Paintball</h2>
         <ul class="nav-bar">
+          <div class="pre-red"></div><!-- Pretty Little Color Thing.-->
           <li><a href="?action=home&accessType=<?php echo $access?>"><h2>Home</h2></a></li>
           <li class="right-nav"><a href="?action=products_page&accessType=<?php echo $access?>"><h2>Products</h2></a></li>
           <li class="right-nav"><a href="?action=about_page&accessType=<?php echo$access?>"><h2>About Us</h2></a></li>
