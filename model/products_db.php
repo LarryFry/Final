@@ -8,7 +8,9 @@
                        Category is not null AND
                        ProductName is not null AND
                        Description is not null AND
-                       ImageCode is not null';
+                       ImageCode is not null
+                       ORDER BY products.Category ASC';
+
       $statement = $db->prepare($query);
       $statement->execute();
       $products = $statement->fetchAll();
@@ -65,7 +67,6 @@
       $statement = $db->prepare($query);
       $statement -> execute();
       $statement -> closeCursor();
-      echo $value;
     }
   }
 
