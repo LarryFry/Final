@@ -43,7 +43,7 @@
               <div class="cartItemHeader">
               <?php echo '<h2>' . $_SESSION['cart'][$item]['name'].'</h2>'?>
               <?php echo '<h2 class=price>$'.$_SESSION['cart'][$item]['price'].'</h2>'?>
-              <?php echo '<h2>' . $_SESSION['cart'][$item]['desc'].'</h2>'?>
+              <?php echo '<h2 class="">' . $_SESSION['cart'][$item]['desc'].'</h2>'?>
             </div>
             <div class="qtyBoxAndLabel">
               <h3>Qty</h3>

@@ -149,6 +149,7 @@ if($accessType == "admin"){
         $Price = filter_input(INPUT_POST, 'Price');
         $Stock = filter_input(INPUT_POST, 'Stock');
         $Category = filter_input(INPUT_POST, 'Category');
+        $Description = filter_input(INPUT_POST, 'Description');
 
         if($adminAction == 'submit_add_form'){
           $ImageCode = $_FILES['prodImg']['name'];
@@ -158,7 +159,8 @@ if($accessType == "admin"){
           $ID = get_ID($ImageCode);
           $result = $ID->fetch(PDO::FETCH_ASSOC);
           $ID = $result['ID'];
-          insertProdTextFields($ProductName, $ProductCode, $Price, $Stock, $Category, $ID);
+          echo("$ProductName, $ProductCode, $Price, $Stock, $Category, $ID, $Description");
+          insertProdTextFields($ProductName, $ProductCode, $Price, $Stock, $Category, $ID, $Description);
         }
         include("admin/adminProductsAdd.php");
       }

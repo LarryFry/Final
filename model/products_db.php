@@ -129,7 +129,7 @@
   function insertProdTextFields($ProductName, $ProductCode, $Price, $Stock, $Category, $ID, $Description){
     global $db;
     $query = 'UPDATE products
-  	           SET ProductName = :prodName , Description = :Description ProductCode = :prodCode, Price = :price, Stock = :stock, Category = :category
+  	           SET ProductName = :prodName , Description = :Description, ProductCode = :prodCode, Price = :price, Stock = :stock, Category = :category
                 WHERE products.ID = :ID';
     $statement = $db->prepare($query);
     $statement -> bindValue(":prodName", $ProductName);

@@ -16,6 +16,7 @@
 					<p>Price: </p><input type="text" name="Price" value=""><br/>
 					<p>Stock: </p><input type="text" name="Stock" value=""><br/>
 					<p>Category: </p><input type="text" name="Category" value=""><br/>
+					<p>Description: </p><input type="text" name="Description" value=""><br/>
 					<input type="submit" value="Add Product" class="changeEmpSub"/>
 			</form>
 		</div>

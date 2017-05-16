@@ -94,9 +94,10 @@ body{
 
 .cartItemHeader{
   position: relative;
-  bottom:4vh;
+  bottom:1vh;
   left:10px;
   display: inline-block;
+  width:50%;
 }
 
 .price{
@@ -114,6 +115,11 @@ body{
 .qtyBoxAndLabel input{
   display: inline-block;
   width:50px;
+}
+
+.desc{
+  color:rgb(100,100,100);
+  font-size: 17px;
 }
 
 
