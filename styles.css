@@ -168,18 +168,30 @@ footer h2{
 /*
   Home
 */
-
+.paintballCaroselWrapper{
+  width: 100%;
+  height:400px;
+  margin: 0 auto;
+  background-color: rgb(30,30,30);
+}
 
 .paintballCarosel{
   width: 96%;
-  height:90%;
+  height:400px;
   margin: 0 auto;
 }
+#caroselPic{
+  height: 400px;
+}
 
-.paintballCaroselWrapper{
-  width: 100%;
-  margin: 0 auto;
-  background-color: rgb(30,30,30);
+.homeDiscription{
+  text-align: center;
+  margin: auto;
+  padding-top: 25px;
+}
+#customerReview{
+  width:inherit;
+  display: inline-block;
 }
 
 
