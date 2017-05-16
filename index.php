@@ -98,7 +98,8 @@ if($accessType == "admin"){
           $Price = filter_input(INPUT_POST, 'Price');
           $Stock = filter_input(INPUT_POST, 'Stock');
           $Category = filter_input(INPUT_POST, 'Category');
-          edit_product($ID, $ProductName, $ProductCode, $Price, $Stock, $Category);
+          $Description = filter_input(INPUT_POST, 'Description');
+          edit_product($ID, $ProductName, $ProductCode, $Price, $Stock, $Category,$Description);
         }
 
         if($adminAction == "delete_prod"){
@@ -198,6 +199,8 @@ if($accessType == "admin"){
 
 
       if($action == "details"){
+        $ID = filter_input(INPUT_POST, 'productID');
+        $product = get_product($ID);
         include("public/details.php");
       }
 

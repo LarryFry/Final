@@ -27,6 +27,7 @@
             <p>Price: </p><input type="text" name="Price" value="<?php echo $product['Price'] ?>"><br />
             <p>Stock: </p><input type="text" name="Stock" value="<?php echo $product['Stock'] ?>"><br />
             <p>Category: </p><input type="text" name="Category" value="<?php echo $product['Category'] ?>"><br />
+            <p>Description: </p><input type="text" name="Description" value="<?php echo $product['Description'] ?>"><br />
             <input type="hidden" value="<?php echo $product['ID'] ?>" name="ID" />
             <input type="hidden" name="accessType" value="admin">
             <input type="hidden" name="action" value="products_page">

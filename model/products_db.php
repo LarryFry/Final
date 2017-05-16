@@ -7,6 +7,7 @@
                        Stock is not null AND
                        Category is not null AND
                        ProductName is not null AND
+                       Description is not null AND
                        ImageCode is not null';
       $statement = $db->prepare($query);
       $statement->execute();
@@ -15,12 +16,31 @@
       return $products;
   }
 
+  function get_product($ID) {
+      global $db;
+      $query = 'SELECT * FROM Products
+                WHERE  ID = :ID AND
+                       ProductCode IS NOT NULL AND
+                       Price is not null AND
+                       Stock is not null AND
+                       Category is not null AND
+                       ProductName is not null AND
+                       Description is not null AND
+                       ImageCode is not null';
+      $statement = $db->prepare($query);
+      $statement -> bindValue(":ID", $ID);
+      $statement->execute();
+      $product = $statement->fetchAll();
+      $statement->closeCursor();
+      return $product;
+  }
 
 
-  function edit_product($ID, $ProductName, $ProductCode, $Price, $Stock, $Category){
+
+  function edit_product($ID, $ProductName, $ProductCode, $Price, $Stock, $Category, $Description){
       global $db;
       $query = 'UPDATE products SET ProductName = :ProductName, ProductCode = :ProductCode ,
-          Price = :Price ,  Stock = :Stock, Category = :Category
+          Price = :Price ,  Stock = :Stock, Category = :Category, Description = :Description
           WHERE products.ID = :ID';
       $statement = $db->prepare($query);
       $statement -> bindValue(":ProductName", $ProductName);
@@ -29,6 +49,7 @@
       $statement -> bindValue(":Stock", $Stock);
       $statement -> bindValue(":Category", $Category);
       $statement -> bindValue(":ID", $ID);
+      $statement -> bindValue(":Description", $Description);
       $statement -> execute();
       $statement -> closeCursor();
   }
@@ -104,10 +125,10 @@
 
 
 
-  function insertProdTextFields($ProductName, $ProductCode, $Price, $Stock, $Category, $ID){
+  function insertProdTextFields($ProductName, $ProductCode, $Price, $Stock, $Category, $ID, $Description){
     global $db;
     $query = 'UPDATE products
-  	           SET ProductName = :prodName , ProductCode = :prodCode, Price = :price, Stock = :stock, Category = :category
+  	           SET ProductName = :prodName , Description = :Description ProductCode = :prodCode, Price = :price, Stock = :stock, Category = :category
                 WHERE products.ID = :ID';
     $statement = $db->prepare($query);
     $statement -> bindValue(":prodName", $ProductName);
@@ -116,6 +137,7 @@
     $statement -> bindValue(":stock", $Stock);
     $statement -> bindValue(":category", $Category);
     $statement -> bindValue(":ID", $ID);
+    $statement -> bindValue(":Description", $Description);
     $statement -> execute();
     $statement -> closeCursor();
   }
