@@ -261,7 +261,7 @@ if($accessType == "admin"){
           endforeach;
         }
         updateStock($productNames, $qtys);
-        
+
         Print_r($_SESSION['cart']);
 
 
