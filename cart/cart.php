@@ -39,7 +39,7 @@
       <?php if(isset($_SESSION['cart'])){ ?>
         <?php foreach($_SESSION['cart'] as $item => $key) : ?>
           <div class="cartItem">
-              <img src="./images/<?php echo $_SESSION['cart'][$item]['img']?>" alt="Sorry for the broken picture. We'll make sure to fire someone.">
+              <img src="./images/<?php echo $_SESSION['cart'][$item]['img']?>" alt="Sorry for the broken picture.">
               <div class="cartItemHeader">
               <?php echo '<h2>' . $_SESSION['cart'][$item]['name'].'</h2>'?>
               <?php echo '<h2 class=price>$'.$_SESSION['cart'][$item]['price'].'</h2>'?>
@@ -48,7 +48,7 @@
             </div>
             <div class="qtyBoxAndLabel">
               <h3>Qty</h3>
-              <input  class="cartQtyBox" id="cartQtyBox" type="text" name="cartQty" value="<?php echo($_SESSION['cart'][$item]['qty'])?>">
+              <input class="cartQtyBox" id="cartQtyBox" type="text" name="cartQty" value="<?php echo($_SESSION['cart'][$item]['qty'])?>">
             </div>
           </div>
         <?php endforeach; ?>
