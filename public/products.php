@@ -3,7 +3,7 @@
   session_start();
   ?>
 
-    <h1>Customer's Product Page </h1>
+    <h1 class="productHead">All Our Products</h1>
     <div class="productsFormContainer">
       <?php foreach($products as $product) : ?>
         <div class="productsFormContainer2">

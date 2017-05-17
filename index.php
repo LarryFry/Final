@@ -228,12 +228,14 @@ if($accessType == "admin"){
         session_start();
         if(isset($_SESSION['cart'])){
           foreach($_SESSION['cart'] as $item => $key) :
+            $_SESSION['cart'][$item]['qty'] = filter_input(INPUT_POST, 'cartQty');
             $productNames[] = $_SESSION['cart'][$item]['name'];
             $qtys[] = $_SESSION['cart'][$item]['qty'];
           endforeach;
         }
         updateStock($productNames, $qtys);
-        
+        Print_r($_SESSION['cart']);
+
         //Send the email to the admin
         include("./email/email.php");
         include("view/thankyou.php");

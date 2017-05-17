@@ -47,7 +47,7 @@
             </div>
             <div class="qtyBoxAndLabel">
               <h3>Qty</h3>
-              <input class="cartQtyBox"type="text" name="cartQty" value="<?php echo($_SESSION['cart'][$item]['qty'])?>">
+              <input  class="cartQtyBox" id="cartQtyBox" type="text" name="cartQty" value="<?php echo($_SESSION['cart'][$item]['qty'])?>">
             </div>
           </div>
         <?php endforeach; ?>
@@ -59,7 +59,6 @@
       <input type="hidden" name="accessType" value="customer" />
       <input type="submit" value="Check Out!" />
     </form>
-
 
 
 

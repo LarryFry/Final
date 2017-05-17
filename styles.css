@@ -192,7 +192,9 @@ footer h3{
 
 
 
-
+.productHead{
+  text-align: center;
+}
 
 
 
@@ -306,8 +308,6 @@ footer h3{
 
 
 
-
-
 /*
   Employee Add Page
 */
@@ -324,4 +324,11 @@ footer h3{
 
 .addEmp input{
   margin-bottom: 18px;
+}
+
+
+
+/*  Thank You page   */
+.thankYou{
+  text-align: center;
 }
