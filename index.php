@@ -261,10 +261,9 @@ if($accessType == "admin"){
           endforeach;
         }
         updateStock($productNames, $qtys);
-
         Print_r($_SESSION['cart']);
 
-
+        session_destroy();
         //Send the email to the admin
         include("./email/email.php");
         include("view/thankyou.php");
