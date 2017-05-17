@@ -10,7 +10,7 @@ $mail->Username = 'larryshadow417@gmail.com';          // SMTP username
 $mail->Password = 'LarryFry'; // SMTP password
 $mail->SMTPSecure = 'tls';                  // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 587;                          // TCP port to connect to
-//$mail->SMTPDebug = 3;
+$mail->SMTPDebug = 3;
 
 
 $mail->setFrom('larryshadow417@gmail.com', 'Cole Davis');//This is the sender
