@@ -9,7 +9,7 @@
 					<input type="file" name="prodImg" class="chooseFile" onchange="readURL(this);">
 					<input type="hidden" name="accessType" value="admin">
 					<input type="hidden" name="action" value="add_product">
-					<input type="hidden" name="adminAction" value="submit_add_form">
+					<input type="hidden" name="adminAction" value="submit_add_form_prod">
 
 					<p>Product Name: </p><input type="text" name="ProductName" value=""><br/>
 					<p>Product Code: </p><input type="text" name="ProductCode" value=""><br/>

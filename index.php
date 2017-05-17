@@ -121,49 +121,76 @@ if($accessType == "admin"){
 
 
       if($action == "add_employee"){
-        $ID = filter_input(INPUT_POST, 'ID');
-        $First = filter_input(INPUT_POST, 'First');
-        $Last = filter_input(INPUT_POST, 'Last');
-        $Title = filter_input(INPUT_POST, 'Title');
-        $Salary = filter_input(INPUT_POST, 'Salary');
-
         if($adminAction == "submit_add_form"){
+        // Get everything from the post.
+          $ID = filter_input(INPUT_POST, 'ID');
+          $First = filter_input(INPUT_POST, 'First');
+          $Last = filter_input(INPUT_POST, 'Last');
+          $Title = filter_input(INPUT_POST, 'Title');
+          $Salary = filter_input(INPUT_POST, 'Salary');
           $ImageCode = $_FILES['empImg']['name'];
-          // Instanciate the new product with just Image code and an ID.
-          insertImageCodeEmp($ImageCode);
-          //Get ID based off ImageCode
-          $ID = get_ID_Emp($ImageCode);
-          $result = $ID->fetch(PDO::FETCH_ASSOC);
-          $ID = $result['ID'];
-          insertEmpTextFields($ID, $First, $Last, $Title, $Salary);
+        //-----------
+          $varArrayEmp=[$ID,$First,$Last,$Title,$Salary,$ImageCode];
+          // Make sure user didn't submit any empty fields or a single space.
+          foreach ($varArrayEmp as $key):
+            if(empty($key) || $key == ' ')
+            {
+              $emptyDetectedEmp='true';
+              echo("<script>alert('Make sure all text fields have an entry, and that you uploaded an image.')</script>");
+              break;
+            }
+            else{
+              $emptyDetectedEmp="false";
+            }
+          endforeach;
+          if($emptyDetectedEmp != 'true'){
+            // Instanciate the new product with just Image code and an ID.
+            insertImageCodeEmp($ImageCode);
+            //Get ID based off ImageCode
+            $ID = get_ID_Emp($ImageCode);
+            $result = $ID->fetch(PDO::FETCH_ASSOC);
+            $ID = $result['ID'];
+            insertEmpTextFields($ID, $First, $Last, $Title, $Salary);
+          }
         }
-
         include("admin/adminAboutAdd.php");
       }
 
-
-
       if($action == "add_product"){
-        $ProductName = filter_input(INPUT_POST, 'ProductName');
-        $ProductCode = filter_input(INPUT_POST, 'ProductCode');
-        $Price = filter_input(INPUT_POST, 'Price');
-        $Stock = filter_input(INPUT_POST, 'Stock');
-        $Category = filter_input(INPUT_POST, 'Category');
-        $Description = filter_input(INPUT_POST, 'Description');
-
-        if($adminAction == 'submit_add_form'){
+        if($adminAction == 'submit_add_form_prod'){
+          $ProductName = filter_input(INPUT_POST, 'ProductName');
+          $ProductCode = filter_input(INPUT_POST, 'ProductCode');
+          $Price = filter_input(INPUT_POST, 'Price');
+          $Stock = filter_input(INPUT_POST, 'Stock');
+          $Category = filter_input(INPUT_POST, 'Category');
+          $Description = filter_input(INPUT_POST, 'Description');
           $ImageCode = $_FILES['prodImg']['name'];
-          // Instanciate the new product with just Image code and an ID.
-          insertImageCode($ImageCode);
-          //Get ID based off ImageCode
-          $ID = get_ID($ImageCode);
-          $result = $ID->fetch(PDO::FETCH_ASSOC);
-          $ID = $result['ID'];
-          echo("$ProductName, $ProductCode, $Price, $Stock, $Category, $ID, $Description");
-          insertProdTextFields($ProductName, $ProductCode, $Price, $Stock, $Category, $ID, $Description);
+          $varArrayProd=[$ProductName, $ProductCode, $Price, $Stock, $Category, $Description, $ImageCode,];
+
+          // Make sure user didn't submit any empty fields or a single space.
+          foreach ($varArrayProd as $key):
+            if(empty($key) || $key == ' ')
+            {
+              $emptyDetectedProd='true';
+              echo("<script>alert('Make sure all text fields have an entry, and that you uploaded an image.')</script>");
+              break;
+            }
+            else{
+              $emptyDetectedProd="false";
+            }
+          endforeach;
+          if($emptyDetectedProd != 'true'){
+            // Instanciate the new product with just Image code and an ID.
+            insertImageCode($ImageCode);
+            //Get ID based off ImageCode
+            $ID = get_ID($ImageCode);
+            $result = $ID->fetch(PDO::FETCH_ASSOC);
+            $ID = $result['ID'];
+            insertProdTextFields($ProductName, $ProductCode, $Price, $Stock, $Category, $ID, $Description);
+          }
         }
         include("admin/adminProductsAdd.php");
-      }
+      }//End of action = "Add Product"
 
 
 
@@ -234,7 +261,9 @@ if($accessType == "admin"){
           endforeach;
         }
         updateStock($productNames, $qtys);
+        
         Print_r($_SESSION['cart']);
+
 
         //Send the email to the admin
         include("./email/email.php");
