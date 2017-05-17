@@ -262,7 +262,7 @@ if($accessType == "admin"){
         }
         updateStock($productNames, $qtys);
 
-        Print_r($_SESSION['cart']);
+
 
         session_destroy();
         //Send the email to the admin
