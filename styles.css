@@ -100,7 +100,6 @@ body{
 
 .cartItemHeader{
   position: relative;
-  bottom:1vh;
   left:10px;
   display: inline-block;
   width:50%;
